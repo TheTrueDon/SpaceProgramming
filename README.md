@@ -1,6 +1,5 @@
 # SPACE//AG Web Edition 1.1
 
-Webspace-Port der aktuellen **SPACE//AG-Serverregeln v0.7** für klassischen PHP-/MySQL-Webspace. Kein dauerhaft laufender Python-/Node-Prozess, kein Docker und keine WebSockets nötig.
 
 ## Voraussetzungen
 
