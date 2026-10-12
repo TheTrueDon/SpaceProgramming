@@ -1,0 +1,3 @@
+<?php
+declare(strict_types=1);require_once __DIR__.'/../../lib/bootstrap.php';space_require_method('POST');space_require_admin_api();$b=space_json_body();$n=max(15,min(90,(int)($b['planet_count']??SPACE_DEFAULT_PLANET_COUNT)));
+try{$r=space_with_world_lock(function(&$w,&$m)use($n){$g=!empty($w['gravity_enabled']);space_accounts_clear();$w=space_create_world(null,$n);$w['gravity_enabled']=$g;$w['running']=false;$w['logs'][]='Neues Universum erzeugt und pausiert. Teams können sich verbinden; der Lehrer startet die Simulation.';$m['last_tick_at']=microtime(true);return ['ok'=>true,'seed'=>$w['seed'],'planet_count'=>count($w['planets'])];},false);space_json($r);}catch(Throwable $e){error_log('SPACE//AG: '.$e->getMessage());space_error('Interner Serverfehler.',500);}

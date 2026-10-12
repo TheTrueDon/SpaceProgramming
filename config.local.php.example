@@ -1,0 +1,15 @@
+<?php
+declare(strict_types=1);
+return [
+    'db_host' => 'localhost',
+    'db_port' => 3306,
+    'db_name' => 'DEINE_DATENBANK',
+    'db_user' => 'DEIN_DB_BENUTZER',
+    'db_pass' => 'DEIN_DB_PASSWORT',
+    // Am einfachsten über install.php erzeugen lassen:
+    'admin_password_hash' => '$2y$10$HIER_EIN_PASSWORT_HASH',
+    'max_teams' => 30,
+    'max_catchup_ticks' => 8,
+    'default_tick_seconds' => 1.5,
+    'session_name' => 'SPACEAGADMIN',
+];
